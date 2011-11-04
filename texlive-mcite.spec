@@ -1,3 +1,9 @@
+# revision 18173
+# category Package
+# catalog-ctan /macros/latex/contrib/mcite
+# catalog-date 2007-01-09 22:36:10 +0100
+# catalog-license gpl
+# catalog-version 1.6
 Name:		texlive-mcite
 Version:	1.6
 Release:	1
@@ -49,6 +55,7 @@ documentation explains how to do that customisation.
 %doc %{_texmfdistdir}/source/latex/mcite/mcite.drv
 %doc %{_texmfdistdir}/source/latex/mcite/mcite.dtx
 %doc %{_texmfdistdir}/source/latex/mcite/mcite.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,3 +66,5 @@ documentation explains how to do that customisation.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
