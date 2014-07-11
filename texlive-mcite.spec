@@ -6,7 +6,7 @@
 # catalog-version 1.6
 Name:		texlive-mcite
 Version:	1.6
-Release:	7
+Release:	8
 Summary:	Multiple items in a single citation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mcite
