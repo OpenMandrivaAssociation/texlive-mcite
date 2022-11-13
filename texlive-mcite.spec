@@ -1,19 +1,13 @@
-# revision 18173
-# category Package
-# catalog-ctan /macros/latex/contrib/mcite
-# catalog-date 2007-01-09 22:36:10 +0100
-# catalog-license gpl
-# catalog-version 1.6
 Name:		texlive-mcite
-Version:	1.6
-Release:	11
+Version:	18173
+Release:	1
 Summary:	Multiple items in a single citation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mcite
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mcite.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mcite.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mcite.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mcite.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mcite.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mcite.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ package requires a customised BibTeX style for its work; the
 documentation explains how to do that customisation.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -48,24 +42,11 @@ documentation explains how to do that customisation.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.6-2
-+ Revision: 753841
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.6-1
-+ Revision: 718982
-- texlive-mcite
-- texlive-mcite
-- texlive-mcite
-- texlive-mcite
-
