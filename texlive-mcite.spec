@@ -1,6 +1,6 @@
 Name:		texlive-mcite
 Version:	18173
-Release:	1
+Release:	2
 Summary:	Multiple items in a single citation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/mcite
